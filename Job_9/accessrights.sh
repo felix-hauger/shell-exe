@@ -11,7 +11,7 @@ IFS=","
 cat -etv <<<"$IFS"
 
 
-while IFS="," read -r user_id user_firstname user_lastname password role
+while IFS="," read -r user_id user_firstname user_lastname user_password user_role
 do
 	echo "id : $user_id"
 
@@ -27,13 +27,13 @@ do
 
 	echo "user name : $user_name"
 
-	echo "mot de passe : $password"
+	echo "mot de passe : $user_password"
 
-	echo "rôle : $role"
+	echo "rôle : $user_role"
 
 	echo ""
 
-	if [ $role = "Admin" ]
+	if [ "$user_role" = "Admin" ]
 	then
 		echo "proute"
 	fi
