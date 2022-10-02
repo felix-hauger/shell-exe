@@ -5,9 +5,6 @@ nb_connections="Nombre de connexions sur ma session : $(last fel | wc -l)"
 
 echo $nb_connections
 
-#date_creation=$(date +%d-%m-%Y-%H:%M)
-#echo $date_creation
-#nb_logs_file="number_connection_$date_creation"
 
 nb_logs_file="number_connection-$(date +%d-%m-%Y-%H:%M)"
 
@@ -19,6 +16,4 @@ if [ -f "/home/fel/$nb_logs_file" ]
 then
 	mv "$nb_logs_file" "/home/fel/Dev/git/shell.exe/Job_8/"
 fi
-
-#printf "Nombre de connexions sur ma session : $(last fel | wc -l)" > "number_connection_$(date +%d-%m-%Y-%H:%M)"
 
