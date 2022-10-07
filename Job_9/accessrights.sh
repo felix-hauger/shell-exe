@@ -47,7 +47,15 @@ do
 		usermod -aG sudo $user_name
 	fi
 
+
+#	SET PASSWORD FROM CSV FILE VALUE
+
 	echo $user_name:$user_password | chpasswd
+
+
+#	FORCE USER TO CHANGE PASSWORD ON NEXT CONNECTION
+
+	chage -d 0 $user_name
 
 done < <(tail -n +2 Shell_Userlist.csv)
 
